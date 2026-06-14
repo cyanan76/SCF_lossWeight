@@ -6,7 +6,7 @@ from datetime import date
 # ==========================================
 # 1. 網頁基本配置與外觀隱藏
 # ==========================================
-st.set_page_config(page_title="每日運動與健康紀錄", page_icon="💪", layout="centered")
+st.set_page_config(page_title="爽超肥每日紀錄", page_icon="🐷", layout="centered")
 
 hide_style = """
     <style>
@@ -34,7 +34,7 @@ if "show_login_msg" not in st.session_state:
 # ==========================================
 # 3. 登入彈窗與驗證邏輯
 # ==========================================
-@st.dialog("🔒 系統登入", width="small")
+@st.dialog("系統登入", width="small")
 def login_modal():
     st.write("請輸入您的帳號密碼以進入系統")
     username = st.text_input("帳號")
@@ -74,7 +74,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 
 # 側邊欄：顯示當前身分與登出按鈕
 with st.sidebar:
-    st.success(f"🟢 當前權限：{'管理員 (Admin)' if st.session_state['role'] == 'admin' else '一般使用者 (User)'}")
+    st.success(f"🟢 當前權限：{'管理員 (Admin)' if st.session_state['role'] == 'admin' else '肥宅 (User)'}")
     if st.button("登出系統"):
         st.session_state["role"] = None
         st.rerun()
@@ -148,14 +148,14 @@ if st.session_state["role"] == "admin":
 # 一般使用者介面 (資料輸入)
 # ==========================================
 elif st.session_state["role"] == "user":
-    st.title("💪 每日運動與健康紀錄")
+    st.title("每日紀錄")
     st.write("請在下方輸入今日數據，完成後點擊送出按鈕。")
     
-    st.header("📝 基本資料")
+    st.header("基本資料")
     record_date = st.date_input("選擇日期", date.today())
     weight = st.number_input("今日體重 (kg)", min_value=30.0, max_value=150.0, value=65.0, step=0.1)
 
-    st.header("🏃‍♂️ 任務追蹤")
+    st.header("我腿好痠肚子好痛任務追蹤")
     st.write("有達成請打勾 ✅，未達成則保持空白 ❌")
     morning_ex = st.checkbox("早上運動")
     noon_fat_burn = st.checkbox("中午燃脂運動")
