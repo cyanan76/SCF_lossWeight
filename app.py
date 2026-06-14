@@ -183,4 +183,5 @@ elif st.session_state["role"] == "user":
             # 更新回 Google Sheets
             conn.update(data=updated_df)
             st.success(f"🎉 紀錄已成功存入資料庫！({record_date})")
-        except Exception as
+        except Exception as e:
+            st.error(f"寫入失敗，請通知管理員檢查連線狀態。錯誤資訊：{e}")
