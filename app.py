@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import date
 
 # 1. 網頁基本配置與外觀隱藏
-st.set_page_config(page_title="每日運動與健康紀錄", page_icon="💪", layout="centered")
+st.set_page_config(page_title="爽超肥每日紀錄", page_icon="🐷", layout="centered")
 
 hide_style = """
     <style>
@@ -71,10 +71,10 @@ if st.session_state["admin_logged_in"]:
 
 else:
     # ==================== 一般用戶數據輸入表單 ====================
-    st.title("💪 每日運動與健康紀錄")
+    st.title("每日運動與健康紀錄")
     st.write("請在下方輸入今日數據，完成後點擊送出按鈕存入後台。")
     
-    st.header("📝 基本資料")
+    st.header("基本資料")
     record_date = st.date_input("選擇日期", date.today())
     weight = st.number_input("今日體重 (kg)", min_value=30.0, max_value=150.0, value=65.0, step=0.1)
 
