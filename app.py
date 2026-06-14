@@ -4,7 +4,7 @@ from datetime import date
 
 # 設定網頁標題
 st.set_page_config(page_title="每日運動與健康紀錄", page_icon="💪")
-st.title("💪 每日運動與健康紀錄")
+st.title("每日運動與健康紀錄")
 
 hide_streamlit_style = """
             <style>
@@ -24,7 +24,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # 日期與體重輸入
-st.header("📝 基本資料")
+st.header("基本資料")
 record_date = st.date_input("選擇日期", date.today())
 weight = st.number_input("今日體重 (kg)", min_value=30.0, max_value=150.0, value=65.0, step=0.1)
 
