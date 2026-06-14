@@ -61,7 +61,7 @@ if st.session_state["role"] is None:
 
 # 顯示登入成功訊息 (顯示後立刻關閉開關，避免重複跳出)
 if st.session_state["show_login_msg"]:
-    role_name = "系統管理員" if st.session_state["role"] == "admin" else "超級肥宅".red
+    role_name = "系統管理員" if st.session_state["role"] == "admin" else "超級肥宅"
     st.toast(f"🎉 登入成功！歡迎進入系統 ({role_name})", icon="✅")
     st.session_state["show_login_msg"] = False
 
