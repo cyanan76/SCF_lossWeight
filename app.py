@@ -6,6 +6,23 @@ from datetime import date
 st.set_page_config(page_title="每日運動與健康紀錄", page_icon="💪")
 st.title("💪 每日運動與健康紀錄")
 
+hide_streamlit_style = """
+            <style>
+            /* 隱藏右上角選單與頂部裝飾 */
+            #MainMenu {visibility: hidden;}
+            header {visibility: hidden;}
+            
+            /* 隱藏預設的 footer */
+            footer {visibility: hidden;}
+            
+            /* 隱藏右下角的 Hosted with Streamlit 徽章 */
+            .viewerBadge_container__1QSob {display: none !important;}
+            .viewerBadge_link__1S137 {display: none !important;}
+            a[href^="https://streamlit.io/cloud"] {display: none !important;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # 日期與體重輸入
 st.header("📝 基本資料")
 record_date = st.date_input("選擇日期", date.today())
