@@ -29,7 +29,7 @@ record_date = st.date_input("選擇日期", date.today())
 weight = st.number_input("今日體重 (kg)", min_value=30.0, max_value=150.0, value=65.0, step=0.1)
 
 # 運動與飲食打勾區塊
-st.header("🏃‍♂️ 任務追蹤")
+st.header("任務追蹤")
 st.write("有達成請打勾 ✅，未達成則保持空白 ❌")
 
 morning_ex = st.checkbox("早上運動")
