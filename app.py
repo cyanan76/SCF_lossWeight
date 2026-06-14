@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import date
 
 # 設定網頁標題
-st.set_page_config(page_title="每日運動與健康紀錄", page_icon="💪")
+st.set_page_config(page_title="我一定要變瘦每日紀錄", page_icon="🐷")
 st.title("每日運動與健康紀錄")
 
 hide_streamlit_style = """
